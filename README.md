@@ -21,3 +21,54 @@ This project implements a distributed image processing system using multiple Doc
   - Oil Painting Effect
 - Load-balanced using **NGINX**.
 - Microservices architecture with **Flask**.
+
+
+## Project Structure
+
+├── docker-compose.yaml
+
+├── nginx.conf
+
+├── filters
+
+│   ├── grayscale
+
+│   │   ├── Dockerfile
+
+│   │   └── grayscale_service.py
+
+│   ├── gaussian_blur
+
+│   │   ├── Dockerfile
+
+│   │   └── gaussian_blur_service.py
+
+│   ├── edge_detection
+
+│   │   ├── Dockerfile
+
+│   │   └── edge_detection_service.py
+
+
+
+
+## How to install it
+1. Create a Base container for the filters:
+  - Create Dockerfile
+    ```
+    FROM python:3.8-slim
+    RUN pip install flask
+    ```
+  - Save the file as Dockerfile.
+  
+  - build the Image 
+  
+    ```
+    docker build -t generic_filter .
+    ```
+
+3. Go to the downloaded files
+4. Run docker compose command:
+   ```
+   docker compose up --build -d
+   ```
