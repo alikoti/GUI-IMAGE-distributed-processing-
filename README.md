@@ -1,6 +1,8 @@
 # Distributed Image Filtering with Docker & NGINX
 
 This project implements a distributed image processing system using multiple Docker containers for different image filters and NGINX as a load balancer.
+# Logical Structure 
+![Drawing1](https://github.com/user-attachments/assets/1dd8b4f6-5117-4146-a0b6-3874a259d782)
 
 ## 🛠 Features
 - Supports multiple image processing filters:
