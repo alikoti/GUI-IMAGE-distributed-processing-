@@ -15,6 +15,70 @@ services:
     networks:
       - image_processing_net
 
+  edge_detection_service:
+    build: ./edge_detection
+    container_name: edge_detection_service
+    ports:
+      - "5003:5003"
+    networks:
+      - image_processing_net
+
+  median_filter_service:
+    build: ./median_filter
+    container_name: median_filter_service
+    ports:
+      - "5006:5006"
+    networks:
+      - image_processing_net
+
+  bilateral_filter_service:
+    build: ./bilateral_filter
+    container_name: bilateral_filter_service
+    ports:
+      - "5007:5007"
+    networks:
+      - image_processing_net
+
+  sobel_filter_service:
+    build: ./sobel_filter
+    container_name: sobel_filter_service
+    ports:
+      - "5008:5008"
+    networks:
+      - image_processing_net
+
+  canny_edge_service:
+    build: ./canny_edge
+    container_name: canny_edge_service
+    ports:
+      - "5009:5009"
+    networks:
+      - image_processing_net
+
+  dilation_service:
+    build: ./dilation
+    container_name: dilation_service
+    ports:
+      - "5010:5010"
+    networks:
+      - image_processing_net
+
+  cartoon_effect_service:
+    build: ./cartoon_effect
+    container_name: cartoon_effect_service
+    ports:
+      - "5014:5014"
+    networks:
+      - image_processing_net
+
+  oil_painting_service:
+    build: ./oil_painting
+    container_name: oil_painting_service
+    ports:
+      - "5015:5015"
+    networks:
+      - image_processing_net
+
   nginx:
     image: nginx:latest
     container_name: nginx_load_balancer
@@ -27,6 +91,14 @@ services:
     depends_on:
       - grayscale_service
       - gaussian_blur_service
+      - edge_detection_service
+      - median_filter_service
+      - bilateral_filter_service
+      - sobel_filter_service
+      - canny_edge_service
+      - dilation_service
+      - cartoon_effect_service
+      - oil_painting_service
 
 networks:
   image_processing_net:
