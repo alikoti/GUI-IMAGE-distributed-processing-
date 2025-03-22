@@ -71,3 +71,4 @@ This project implements a distributed image processing system using multiple Doc
    ```
    docker compose up --build -d
    ```
+![image](https://github.com/user-attachments/assets/d36410ac-5d67-4669-90f3-633441d2da3b)
