@@ -15,7 +15,6 @@ This project implements a distributed image processing system using multiple Doc
   - Canny Edge Detection
   - Dilation
   - Erosion
-  - Fourier Transform
   - Sepia Tone
   - Cartoon Effect
   - Oil Painting Effect
