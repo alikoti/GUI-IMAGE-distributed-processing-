@@ -57,15 +57,25 @@ This project implements a distributed image processing system using multiple Doc
 1. Create a Base container for the filters:
   - Create Dockerfile
     ```
-    FROM python:3.8-slim
-    RUN pip install flask
+# Base image with Flask and OpenCV
+FROM python:3.9-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python packages
+RUN pip install --no-cache-dir flask opencv-python
     ```
   - Save the file as Dockerfile.
   
   - build the Image 
   
     ```
-    docker build -t generic_filter .
+    docker build -f Dockerfile.base -t generic_filter:latest .
+
     ```
 
 3. Go to the downloaded files
