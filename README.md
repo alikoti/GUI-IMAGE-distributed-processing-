@@ -57,7 +57,6 @@ This project implements a distributed image processing system using multiple Doc
 1. Create a Base container for the filters:
   - Create Dockerfile
     ```
-# Base image with Flask and OpenCV
 FROM python:3.9-slim
 
 RUN apt-get update && apt-get install -y \
